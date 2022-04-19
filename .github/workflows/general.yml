@@ -134,7 +134,7 @@ jobs:
             --force
             --version=${{ env.SQLX_VERSION }}
             --features=${{ env.SQLX_FEATURES }}
-            --no-default--features
+            --no-default-features
             --locked
 
       - name: Migrate database
