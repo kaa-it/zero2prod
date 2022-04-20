@@ -24,3 +24,12 @@ udeps:
 # `cargo install bunyan`
 test:
 	TEST_LOG=true cargo test health_check_works | bunyan
+
+sqlx_prepare:
+	cargo sqlx prepare -- --lib
+
+image:
+	docker build --tag zero2prod --file Dockerfile .
+
+run:
+	docker run -p 8001:8000 zero2prod
