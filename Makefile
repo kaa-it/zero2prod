@@ -23,7 +23,8 @@ udeps:
 # The original `bunyan` requires NPM, but you can install a Rust-port with
 # `cargo install bunyan`
 test:
-	TEST_LOG=true cargo test health_check_works | bunyan
+	#TEST_LOG=true cargo test health_check_works | bunyan
+	TEST_LOG=true cargo test | bunyan
 
 sqlx_prepare:
 	cargo sqlx prepare -- --lib
